@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="Quicksand_Book.otf">
+            <string>QuicksandBook-Regular</string>
+        </mutableArray>
+    </customFonts>
+    <scenes>
+        <!--Load Session Table View Controller-->
+        <scene sceneID="IxZ-Hw-7E3">
+            <objects>
+                <tableViewController id="oWQ-KZ-A63" customClass="LoadSessionTableViewController" customModule="Ai_SingAlong" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="65" sectionHeaderHeight="22" sectionFooterHeight="22" id="E7t-rd-QoL">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="SMQ-ZS-bxZ">
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="132"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <searchBar contentMode="redraw" placeholder="Search for Set" translatesAutoresizingMaskIntoConstraints="NO" id="QGa-OA-VUR">
+                                    <rect key="frame" x="0.0" y="88" width="522" height="44"/>
+                                    <color key="barTintColor" red="0.91607481059999996" green="0.1438312943" blue="0.12674414710000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </searchBar>
+                                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="whd-Qk-QST" customClass="MainButton" customModule="Ai_SingAlong" customModuleProvider="target">
+                                    <rect key="frame" x="522" y="89" width="70" height="40"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="40" id="1xd-Lc-4Aj"/>
+                                        <constraint firstAttribute="width" constant="70" id="Lua-82-EkT"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" name="QuicksandBook-Regular" family="Quicksand" pointSize="21"/>
+                                    <state key="normal" title="New">
+                                        <color key="titleColor" red="0.9097024937" green="0.0" blue="0.050546871010000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="color" keyPath="buttonColor">
+                                            <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="9"/>
+                                        </userDefinedRuntimeAttribute>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="lineThickness">
+                                            <real key="value" value="0.0"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" red="0.9097024937" green="0.0" blue="0.050546871010000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstItem="whd-Qk-QST" firstAttribute="leading" secondItem="QGa-OA-VUR" secondAttribute="trailing" id="G8X-HU-hIy"/>
+                                <constraint firstItem="QGa-OA-VUR" firstAttribute="top" secondItem="SMQ-ZS-bxZ" secondAttribute="top" constant="88" id="Jqx-Sp-H9j"/>
+                                <constraint firstAttribute="trailing" secondItem="whd-Qk-QST" secondAttribute="trailing" constant="8" id="Vqt-bJ-p7f"/>
+                                <constraint firstItem="whd-Qk-QST" firstAttribute="top" secondItem="SMQ-ZS-bxZ" secondAttribute="top" constant="88" id="mpY-kX-HeK"/>
+                                <constraint firstItem="QGa-OA-VUR" firstAttribute="leading" secondItem="SMQ-ZS-bxZ" secondAttribute="leading" id="pA8-gM-iX6"/>
+                                <constraint firstAttribute="bottom" secondItem="whd-Qk-QST" secondAttribute="bottom" id="pg4-gB-xCR"/>
+                                <constraint firstAttribute="bottom" secondItem="QGa-OA-VUR" secondAttribute="bottom" id="wiT-UC-Bqg"/>
+                            </constraints>
+                        </view>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="65" id="obc-GB-db2">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="obc-GB-db2" id="J2o-eB-66Z">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="oWQ-KZ-A63" id="Xyg-TG-gZe"/>
+                            <outlet property="delegate" destination="oWQ-KZ-A63" id="0tU-pU-Yk1"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="C9y-GH-U3e" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2673" y="-440"/>
+        </scene>
+        <!--Add Song View Controller-->
+        <scene sceneID="VFO-I6-LuU">
+            <objects>
+                <viewController id="cZA-R2-26X" customClass="AddSongViewController" customModule="Ai_SingAlong" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="VSS-Fa-1zW"/>
+                        <viewControllerLayoutGuide type="bottom" id="ZOg-Hw-Mou"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="jbc-yu-Koi">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="dkW-pV-w10"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TXI-kh-Bt6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4094" y="-1157"/>
+        </scene>
+        <!--Song Search View Controller-->
+        <scene sceneID="ld2-fC-A0j">
+            <objects>
+                <viewController id="KEV-6D-6uI" customClass="SongSearchViewController" customModule="Ai_SingAlong" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ud7-QR-Wlm"/>
+                        <viewControllerLayoutGuide type="bottom" id="f94-Wz-pkJ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="abh-nN-3B1">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="78L-z8-Nlp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4094" y="-1883"/>
+        </scene>
+        <!--Song Detail View Controller-->
+        <scene sceneID="V1w-3a-RNp">
+            <objects>
+                <viewController id="MIP-72-OQI" customClass="SongDetailViewController" customModule="Ai_SingAlong" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="G99-Py-pee"/>
+                        <viewControllerLayoutGuide type="bottom" id="kLJ-dg-7tX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="F1F-lo-lcr">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="k0m-Sv-03k" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4827" y="-1157"/>
+        </scene>
+        <!--Edit Block View Controller-->
+        <scene sceneID="kZe-yA-ime">
+            <objects>
+                <viewController id="74f-TR-Pu1" customClass="EditBlockViewController" customModule="Ai_SingAlong" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0dS-bQ-lPL"/>
+                        <viewControllerLayoutGuide type="bottom" id="kQy-eK-Cio"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="XKY-9O-hg1">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a5V-jP-0cj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5479" y="-1157"/>
+        </scene>
+        <!--Almost Done View Controller-->
+        <scene sceneID="o2d-52-lDr">
+            <objects>
+                <viewController id="N8E-AR-7kq" customClass="AlmostDoneViewController" customModule="Ai_SingAlong" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="f59-0q-4fO"/>
+                        <viewControllerLayoutGuide type="bottom" id="9cz-n0-Cup"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Z4e-Tf-dQz">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bP5-I5-bqx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6137" y="-1157"/>
+        </scene>
+        <!--Save Set View Controller-->
+        <scene sceneID="hVl-jU-gpO">
+            <objects>
+                <viewController id="Fn6-9E-7aO" customClass="SaveSetViewController" customModule="Ai_SingAlong" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="AW5-fK-u2d"/>
+                        <viewControllerLayoutGuide type="bottom" id="dvd-Xa-BkK"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="YG0-zB-qFR">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YHu-9o-fYp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6784" y="-1157"/>
+        </scene>
+        <!--What Now View Controller-->
+        <scene sceneID="ee6-AA-DAK">
+            <objects>
+                <viewController id="gWl-9s-XGy" customClass="WhatNowViewController" customModule="Ai_SingAlong" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="t6s-UR-cy3"/>
+                        <viewControllerLayoutGuide type="bottom" id="3Y6-wh-Gfz"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ZLF-FV-eDh">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="7fk-mP-4It" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7451" y="-1157"/>
+        </scene>
+        <!--New Edit Set Table View Controller-->
+        <scene sceneID="zH2-ov-ddz">
+            <objects>
+                <tableViewController id="hTy-WO-afz" customClass="NewEditSetTableViewController" customModule="Ai_SingAlong" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" sectionHeaderHeight="22" sectionFooterHeight="22" id="9an-pQ-LPL">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="90" id="Rg4-dM-IlU">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Rg4-dM-IlU" id="H3r-hw-pad">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="hTy-WO-afz" id="JLH-m7-gxN"/>
+                            <outlet property="delegate" destination="hTy-WO-afz" id="j5E-bl-0zu"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Lwu-Md-D8E" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3351" y="-440"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Tcq-Gs-Jkn">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="hKY-Sy-Qr8" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="2kz-FC-f5q">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="cZA-R2-26X" kind="relationship" relationship="rootViewController" id="r7C-Kq-iTa"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r5b-9S-zmh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3351" y="-1157"/>
+        </scene>
+    </scenes>
+</document>

@@ -1,0 +1,11 @@
+# Ai!SingAlong
+
+This app was my original idea for a final project (before I joined the group making Setup.)  Incorporates Parse framework and Crashlytics.  Written in Swift.
+
+This app is like a miniaturized version of slide projection software like ProPresenter.  It's designed to be used with live music and allows you to create a Session of songs.  Songs can be added from an API, or typed out manually.  
+
+Songs can be split into blocks for Presentation mode, where the person running the Session can display a certain block of text at a time.  Or all the lyrics can be displayed at once.  
+
+A Session can be saved with or without a password.  No other registration or login required!  Anyone can find a session in Search.  
+
+This app features a lot of custom drawing, table views with reusable cells, and content generated based on searches, as well as multi-peer connectivity in Presentation mode.
