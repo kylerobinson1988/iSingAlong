@@ -10,6 +10,9 @@
 		91031FDB1B448FAC00F2FE36 /* EditSet.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91031FDA1B448FAC00F2FE36 /* EditSet.storyboard */; };
 		91031FDD1B448FC800F2FE36 /* RunAndWatch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91031FDC1B448FC800F2FE36 /* RunAndWatch.storyboard */; };
 		91031FDF1B44925300F2FE36 /* WatchSetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91031FDE1B44925300F2FE36 /* WatchSetViewController.swift */; };
+		9127AF6C1B791E48005FB1CF /* MainMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9127AF6B1B791E48005FB1CF /* MainMenuViewController.m */; };
+		9127AF6F1B7923B9005FB1CF /* LoadSetTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9127AF6E1B7923B9005FB1CF /* LoadSetTableViewController.m */; };
+		9127AF721B792631005FB1CF /* SetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9127AF711B792631005FB1CF /* SetCell.m */; };
 		915CE5FD1B3B3F6100418517 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 915CE5FB1B3B3F6100418517 /* Fabric.framework */; };
 		915CE5FE1B3B3F6100418517 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 915CE5FC1B3B3F6100418517 /* Crashlytics.framework */; };
 		91A9F0831B0E508B000770BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A9F0821B0E508B000770BD /* AppDelegate.swift */; };
@@ -17,11 +20,6 @@
 		91A9F08A1B0E508B000770BD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91A9F0891B0E508B000770BD /* Images.xcassets */; };
 		91A9F08D1B0E508B000770BD /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 91A9F08B1B0E508B000770BD /* LaunchScreen.xib */; };
 		91A9F0991B0E508B000770BD /* Ai_SingAlongTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A9F0981B0E508B000770BD /* Ai_SingAlongTests.swift */; };
-		91A9F0A31B0E5112000770BD /* MainMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A9F0A21B0E5112000770BD /* MainMenuViewController.swift */; };
-		91D1109C1B433B6500F5C51A /* NewEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D1109B1B433B6500F5C51A /* NewEditViewController.swift */; };
-		91D1109E1B433D9500F5C51A /* LoadSessionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D1109D1B433D9500F5C51A /* LoadSessionTableViewController.swift */; };
-		91D110A01B433E6600F5C51A /* NewSessionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D1109F1B433E6600F5C51A /* NewSessionTableViewController.swift */; };
-		91D110A21B43407400F5C51A /* NewEditSetTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D110A11B43407400F5C51A /* NewEditSetTableViewController.swift */; };
 		91D110A51B43442800F5C51A /* AddSongViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D110A41B43442800F5C51A /* AddSongViewController.swift */; };
 		91D110A71B43445A00F5C51A /* SongDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D110A61B43445A00F5C51A /* SongDetailViewController.swift */; };
 		91D110A91B4344E600F5C51A /* EditBlockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D110A81B4344E600F5C51A /* EditBlockViewController.swift */; };
@@ -41,7 +39,6 @@
 		91D110C31B441FAB00F5C51A /* CustomButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D110C21B441FAB00F5C51A /* CustomButtons.swift */; };
 		91D110F71B442E9D00F5C51A /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D110F61B442E9D00F5C51A /* GradientView.swift */; };
 		91D110FF1B445EDD00F5C51A /* RunSetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D110FE1B445EDD00F5C51A /* RunSetViewController.swift */; };
-		91D111011B445EF100F5C51A /* LoadSetTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D111001B445EF100F5C51A /* LoadSetTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +55,13 @@
 		91031FDA1B448FAC00F2FE36 /* EditSet.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = EditSet.storyboard; sourceTree = "<group>"; };
 		91031FDC1B448FC800F2FE36 /* RunAndWatch.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = RunAndWatch.storyboard; sourceTree = "<group>"; };
 		91031FDE1B44925300F2FE36 /* WatchSetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchSetViewController.swift; sourceTree = "<group>"; };
+		9127AF661B790200005FB1CF /* Ai!SingAlong-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Ai!SingAlong-Bridging-Header.h"; sourceTree = "<group>"; };
+		9127AF6A1B791E48005FB1CF /* MainMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainMenuViewController.h; sourceTree = "<group>"; };
+		9127AF6B1B791E48005FB1CF /* MainMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainMenuViewController.m; sourceTree = "<group>"; };
+		9127AF6D1B7923B9005FB1CF /* LoadSetTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadSetTableViewController.h; sourceTree = "<group>"; };
+		9127AF6E1B7923B9005FB1CF /* LoadSetTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadSetTableViewController.m; sourceTree = "<group>"; };
+		9127AF701B792631005FB1CF /* SetCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetCell.h; sourceTree = "<group>"; };
+		9127AF711B792631005FB1CF /* SetCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetCell.m; sourceTree = "<group>"; };
 		915CE5FB1B3B3F6100418517 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		915CE5FC1B3B3F6100418517 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		91A9F07D1B0E508B000770BD /* Ai!SingAlong.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ai!SingAlong.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -69,13 +73,8 @@
 		91A9F0921B0E508B000770BD /* Ai!SingAlongTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Ai!SingAlongTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		91A9F0971B0E508B000770BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		91A9F0981B0E508B000770BD /* Ai_SingAlongTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ai_SingAlongTests.swift; sourceTree = "<group>"; };
-		91A9F0A21B0E5112000770BD /* MainMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuViewController.swift; sourceTree = "<group>"; };
 		91A9F0A41B0E51E0000770BD /* Bright and Beautiful.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Bright and Beautiful.otf"; sourceTree = "<group>"; };
 		91A9F0A51B0E526E000770BD /* coolvetica rg.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "coolvetica rg.ttf"; sourceTree = "<group>"; };
-		91D1109B1B433B6500F5C51A /* NewEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewEditViewController.swift; sourceTree = "<group>"; };
-		91D1109D1B433D9500F5C51A /* LoadSessionTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadSessionTableViewController.swift; sourceTree = "<group>"; };
-		91D1109F1B433E6600F5C51A /* NewSessionTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewSessionTableViewController.swift; sourceTree = "<group>"; };
-		91D110A11B43407400F5C51A /* NewEditSetTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewEditSetTableViewController.swift; sourceTree = "<group>"; };
 		91D110A41B43442800F5C51A /* AddSongViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddSongViewController.swift; sourceTree = "<group>"; };
 		91D110A61B43445A00F5C51A /* SongDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongDetailViewController.swift; sourceTree = "<group>"; };
 		91D110A81B4344E600F5C51A /* EditBlockViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditBlockViewController.swift; sourceTree = "<group>"; };
@@ -93,7 +92,6 @@
 		91D110C21B441FAB00F5C51A /* CustomButtons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButtons.swift; sourceTree = "<group>"; };
 		91D110F61B442E9D00F5C51A /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		91D110FE1B445EDD00F5C51A /* RunSetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RunSetViewController.swift; sourceTree = "<group>"; };
-		91D111001B445EF100F5C51A /* LoadSetTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadSetTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,11 +137,9 @@
 		91A9F07F1B0E508B000770BD /* Ai!SingAlong */ = {
 			isa = PBXGroup;
 			children = (
-				91A9F0861B0E508B000770BD /* MainMenu.storyboard */,
 				91031FDA1B448FAC00F2FE36 /* EditSet.storyboard */,
 				91031FDC1B448FC800F2FE36 /* RunAndWatch.storyboard */,
-				91A9F0A21B0E5112000770BD /* MainMenuViewController.swift */,
-				91D1109A1B433A8E00F5C51A /* SessionFlow */,
+				91D1109A1B433A8E00F5C51A /* MainMenuFlow */,
 				91D110A31B4340E300F5C51A /* AddSongFlow */,
 				91D110FC1B445EB200F5C51A /* RunWatchFlow */,
 				91D110F51B442E8800F5C51A /* CustomElements */,
@@ -155,6 +151,7 @@
 		91A9F0801B0E508B000770BD /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				9127AF661B790200005FB1CF /* Ai!SingAlong-Bridging-Header.h */,
 				91A9F0821B0E508B000770BD /* AppDelegate.swift */,
 				91A9F0891B0E508B000770BD /* Images.xcassets */,
 				91A9F08B1B0E508B000770BD /* LaunchScreen.xib */,
@@ -189,15 +186,18 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		91D1109A1B433A8E00F5C51A /* SessionFlow */ = {
+		91D1109A1B433A8E00F5C51A /* MainMenuFlow */ = {
 			isa = PBXGroup;
 			children = (
-				91D1109B1B433B6500F5C51A /* NewEditViewController.swift */,
-				91D1109D1B433D9500F5C51A /* LoadSessionTableViewController.swift */,
-				91D1109F1B433E6600F5C51A /* NewSessionTableViewController.swift */,
-				91D110A11B43407400F5C51A /* NewEditSetTableViewController.swift */,
+				91A9F0861B0E508B000770BD /* MainMenu.storyboard */,
+				9127AF6A1B791E48005FB1CF /* MainMenuViewController.h */,
+				9127AF6B1B791E48005FB1CF /* MainMenuViewController.m */,
+				9127AF6D1B7923B9005FB1CF /* LoadSetTableViewController.h */,
+				9127AF6E1B7923B9005FB1CF /* LoadSetTableViewController.m */,
+				9127AF701B792631005FB1CF /* SetCell.h */,
+				9127AF711B792631005FB1CF /* SetCell.m */,
 			);
-			name = SessionFlow;
+			name = MainMenuFlow;
 			sourceTree = "<group>";
 		};
 		91D110A31B4340E300F5C51A /* AddSongFlow */ = {
@@ -227,7 +227,6 @@
 			isa = PBXGroup;
 			children = (
 				91D110FE1B445EDD00F5C51A /* RunSetViewController.swift */,
-				91D111001B445EF100F5C51A /* LoadSetTableViewController.swift */,
 				91031FDE1B44925300F2FE36 /* WatchSetViewController.swift */,
 			);
 			name = RunWatchFlow;
@@ -363,22 +362,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				91D110A91B4344E600F5C51A /* EditBlockViewController.swift in Sources */,
-				91D110A01B433E6600F5C51A /* NewSessionTableViewController.swift in Sources */,
 				91D110AF1B434B8800F5C51A /* SaveSetViewController.swift in Sources */,
+				9127AF6F1B7923B9005FB1CF /* LoadSetTableViewController.m in Sources */,
 				91D110AD1B434B7900F5C51A /* AlmostDoneViewController.swift in Sources */,
 				91D110C31B441FAB00F5C51A /* CustomButtons.swift in Sources */,
 				91D110A51B43442800F5C51A /* AddSongViewController.swift in Sources */,
 				91D110F71B442E9D00F5C51A /* GradientView.swift in Sources */,
 				91D110AB1B43453900F5C51A /* SongSearchViewController.swift in Sources */,
-				91D110A21B43407400F5C51A /* NewEditSetTableViewController.swift in Sources */,
-				91D1109E1B433D9500F5C51A /* LoadSessionTableViewController.swift in Sources */,
+				9127AF721B792631005FB1CF /* SetCell.m in Sources */,
 				91D110B11B434B9400F5C51A /* WhatNowViewController.swift in Sources */,
-				91A9F0A31B0E5112000770BD /* MainMenuViewController.swift in Sources */,
 				91D110A71B43445A00F5C51A /* SongDetailViewController.swift in Sources */,
 				91D110FF1B445EDD00F5C51A /* RunSetViewController.swift in Sources */,
 				91A9F0831B0E508B000770BD /* AppDelegate.swift in Sources */,
-				91D1109C1B433B6500F5C51A /* NewEditViewController.swift in Sources */,
-				91D111011B445EF100F5C51A /* LoadSetTableViewController.swift in Sources */,
+				9127AF6C1B791E48005FB1CF /* MainMenuViewController.m in Sources */,
 				91031FDF1B44925300F2FE36 /* WatchSetViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -508,6 +504,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -516,6 +513,8 @@
 				INFOPLIST_FILE = "Ai!SingAlong/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Ai!SingAlong/Ai!SingAlong-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -523,6 +522,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -531,6 +531,7 @@
 				INFOPLIST_FILE = "Ai!SingAlong/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Ai!SingAlong/Ai!SingAlong-Bridging-Header.h";
 			};
 			name = Release;
 		};
