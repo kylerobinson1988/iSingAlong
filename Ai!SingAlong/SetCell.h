@@ -10,6 +10,9 @@
 
 @interface SetCell : UITableViewCell
 
+@property NSString * identifier;
+@property NSString * password;
+
 @property (weak, nonatomic) IBOutlet UILabel *setName;
 @property (weak, nonatomic) IBOutlet UILabel *setDate;
 
