@@ -7,10 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+//#import "CustomButtons.swift"
 
 @interface SetlistMenuCell : UITableViewCell
 
-@property (weak, nonatomic) IBOutlet MainButton *songButton;
+@property (weak, nonatomic) IBOutlet UIButton *songButton;
 @property (weak, nonatomic) IBOutlet UILabel *songLabel;
+
 
 @end

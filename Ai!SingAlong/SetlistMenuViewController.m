@@ -7,15 +7,22 @@
 //
 
 #import "SetlistMenuViewController.h"
+#import "SetlistMenuCell.h"
 
 @interface SetlistMenuViewController ()
 
 @end
 
 @implementation SetlistMenuViewController
+{
+    NSMutableArray * setData;
+    
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [self loadInfo];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -29,19 +36,30 @@
     // Dispose of any resources that can be recreated.
 }
 
-#pragma mark - Table view data source
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
+- (void)loadInfo {
+    
+    PFQuery * setQuery = [PFQuery queryWithClassName:_setToLoad];
+    
+    [setQuery findObjectsInBackgroundWithBlock:^(NSArray * setlistInfo, NSError * error) {
+        
+        [setData arrayByAddingObjectsFromArray:setlistInfo];
+        
+        [[self tableView] reloadData];
+        
+    }];
 }
+
+
+#pragma mark - Table view data source
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return setData.count;
 }
+
+
+
 
 - (IBAction)backButtonPressed:(id)sender {
     
@@ -50,15 +68,23 @@
 }
 
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    SetlistMenuCell *cell = [tableView dequeueReusableCellWithIdentifier:@"setlistMenuCell" forIndexPath:indexPath];
     
-    // Configure the cell...
+    cell.songLabel = setData[indexPath.row][@"songName"];
     
     return cell;
 }
-*/
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    
+    
+    
+    
+    
+}
 
 /*
 // Override to support conditional editing of the table view.

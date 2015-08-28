@@ -7,6 +7,7 @@
 //
 
 #import "NewSetViewController.h"
+#import "SetlistMenuViewController.h"
 
 @interface NewSetViewController ()
 
@@ -57,6 +58,11 @@
                         if (succeeded) {
                             NSLog(@"New set class created.");
                             
+                            SetlistMenuViewController * setlistMenuVC = [self.storyboard instantiateViewControllerWithIdentifier:@"setlistMenuVC"];
+                            
+                            setlistMenuVC.setToLoad = finalName;
+                            
+                            [self.navigationController pushViewController:setlistMenuVC animated:YES];
                             
                             
                         } else {

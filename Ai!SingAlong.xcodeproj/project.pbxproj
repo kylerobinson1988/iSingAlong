@@ -127,6 +127,7 @@
 		91EFB68E1B8CCAB600AA1983 /* SetlistMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetlistMenuViewController.m; sourceTree = "<group>"; };
 		91EFB6901B8CCC9C00AA1983 /* SetlistMenuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetlistMenuCell.h; sourceTree = "<group>"; };
 		91EFB6911B8CCC9C00AA1983 /* SetlistMenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetlistMenuCell.m; sourceTree = "<group>"; };
+		91EFB6931B8F546200AA1983 /* Notes.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Notes.playground; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,6 +186,7 @@
 		91A9F0741B0E508B000770BD = {
 			isa = PBXGroup;
 			children = (
+				91EFB6931B8F546200AA1983 /* Notes.playground */,
 				91A9F07F1B0E508B000770BD /* Ai!SingAlong */,
 				91A9F0951B0E508B000770BD /* Ai!SingAlongTests */,
 				91A9F07E1B0E508B000770BD /* Products */,

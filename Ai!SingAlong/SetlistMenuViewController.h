@@ -7,7 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Parse/Parse.h>
+#import <Bolts/Bolts.h>
 
 @interface SetlistMenuViewController : UITableViewController
+
+@property NSString * setToLoad;
 
 @end
