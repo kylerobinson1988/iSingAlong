@@ -8,10 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		91031FDB1B448FAC00F2FE36 /* AddSong.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91031FDA1B448FAC00F2FE36 /* AddSong.storyboard */; };
-		91031FDD1B448FC800F2FE36 /* RunAndWatch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91031FDC1B448FC800F2FE36 /* RunAndWatch.storyboard */; };
 		91031FDF1B44925300F2FE36 /* WatchSetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91031FDE1B44925300F2FE36 /* WatchSetViewController.swift */; };
-		9127AF6C1B791E48005FB1CF /* SetOptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9127AF6B1B791E48005FB1CF /* SetOptionViewController.m */; };
-		9127AF721B792631005FB1CF /* SetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9127AF711B792631005FB1CF /* SetCell.m */; };
+		91082E171B9F393100C06D66 /* SetMenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91082E161B9F393100C06D66 /* SetMenuTableViewController.swift */; };
+		91082E191B9F3A4D00C06D66 /* NewSetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91082E181B9F3A4D00C06D66 /* NewSetViewController.swift */; };
+		91082E1B1B9F57B500C06D66 /* SetlistMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91082E1A1B9F57B500C06D66 /* SetlistMenuViewController.swift */; };
+		91082E1D1B9F59C200C06D66 /* SetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91082E1C1B9F59C200C06D66 /* SetCell.swift */; };
+		91082E1F1B9F5A9300C06D66 /* SetOptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91082E1E1B9F5A9300C06D66 /* SetOptionViewController.swift */; };
+		91082E211B9F5ED900C06D66 /* SetlistMenuCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91082E201B9F5ED900C06D66 /* SetlistMenuCell.swift */; };
 		9127AF751B7A366F005FB1CF /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9127AF731B7A366F005FB1CF /* Bolts.framework */; };
 		9127AF761B7A366F005FB1CF /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9127AF741B7A366F005FB1CF /* Parse.framework */; };
 		9127AF811B7A36B8005FB1CF /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9127AF771B7A36B8005FB1CF /* AudioToolbox.framework */; };
@@ -24,6 +27,9 @@
 		9127AF881B7A36B8005FB1CF /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9127AF7E1B7A36B8005FB1CF /* Security.framework */; };
 		9127AF891B7A36B8005FB1CF /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9127AF7F1B7A36B8005FB1CF /* StoreKit.framework */; };
 		9127AF8A1B7A36B8005FB1CF /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9127AF801B7A36B8005FB1CF /* SystemConfiguration.framework */; };
+		91520A041BA0827100F2CDAC /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91520A031BA0827100F2CDAC /* StartViewController.swift */; };
+		91520A361BA1E65200F2CDAC /* SongInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91520A351BA1E65200F2CDAC /* SongInfoViewController.swift */; };
+		91520A381BA204C700F2CDAC /* BlockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91520A371BA204C700F2CDAC /* BlockViewController.swift */; };
 		915CE5FD1B3B3F6100418517 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 915CE5FB1B3B3F6100418517 /* Fabric.framework */; };
 		915CE5FE1B3B3F6100418517 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 915CE5FC1B3B3F6100418517 /* Crashlytics.framework */; };
 		91A9F0831B0E508B000770BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A9F0821B0E508B000770BD /* AppDelegate.swift */; };
@@ -50,11 +56,7 @@
 		91D110C31B441FAB00F5C51A /* CustomButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D110C21B441FAB00F5C51A /* CustomButtons.swift */; };
 		91D110F71B442E9D00F5C51A /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D110F61B442E9D00F5C51A /* GradientView.swift */; };
 		91D110FF1B445EDD00F5C51A /* RunSetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D110FE1B445EDD00F5C51A /* RunSetViewController.swift */; };
-		91EFB6861B8B5BC100AA1983 /* SetMenuTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91EFB6851B8B5BC100AA1983 /* SetMenuTableViewController.m */; };
 		91EFB6891B8B788700AA1983 /* NewEditSet.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91EFB6881B8B788700AA1983 /* NewEditSet.storyboard */; };
-		91EFB68C1B8B7AD900AA1983 /* NewSetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91EFB68B1B8B7AD900AA1983 /* NewSetViewController.m */; };
-		91EFB68F1B8CCAB600AA1983 /* SetlistMenuViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 91EFB68E1B8CCAB600AA1983 /* SetlistMenuViewController.m */; };
-		91EFB6921B8CCC9C00AA1983 /* SetlistMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 91EFB6911B8CCC9C00AA1983 /* SetlistMenuCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,13 +71,14 @@
 
 /* Begin PBXFileReference section */
 		91031FDA1B448FAC00F2FE36 /* AddSong.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = AddSong.storyboard; sourceTree = "<group>"; };
-		91031FDC1B448FC800F2FE36 /* RunAndWatch.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = RunAndWatch.storyboard; sourceTree = "<group>"; };
 		91031FDE1B44925300F2FE36 /* WatchSetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchSetViewController.swift; sourceTree = "<group>"; };
+		91082E161B9F393100C06D66 /* SetMenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetMenuTableViewController.swift; sourceTree = "<group>"; };
+		91082E181B9F3A4D00C06D66 /* NewSetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewSetViewController.swift; sourceTree = "<group>"; };
+		91082E1A1B9F57B500C06D66 /* SetlistMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetlistMenuViewController.swift; sourceTree = "<group>"; };
+		91082E1C1B9F59C200C06D66 /* SetCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetCell.swift; sourceTree = "<group>"; };
+		91082E1E1B9F5A9300C06D66 /* SetOptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetOptionViewController.swift; sourceTree = "<group>"; };
+		91082E201B9F5ED900C06D66 /* SetlistMenuCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetlistMenuCell.swift; sourceTree = "<group>"; };
 		9127AF661B790200005FB1CF /* Ai!SingAlong-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Ai!SingAlong-Bridging-Header.h"; sourceTree = "<group>"; };
-		9127AF6A1B791E48005FB1CF /* SetOptionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetOptionViewController.h; sourceTree = "<group>"; };
-		9127AF6B1B791E48005FB1CF /* SetOptionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetOptionViewController.m; sourceTree = "<group>"; };
-		9127AF701B792631005FB1CF /* SetCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetCell.h; sourceTree = "<group>"; };
-		9127AF711B792631005FB1CF /* SetCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetCell.m; sourceTree = "<group>"; };
 		9127AF731B7A366F005FB1CF /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		9127AF741B7A366F005FB1CF /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		9127AF771B7A36B8005FB1CF /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -88,6 +91,9 @@
 		9127AF7E1B7A36B8005FB1CF /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		9127AF7F1B7A36B8005FB1CF /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		9127AF801B7A36B8005FB1CF /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		91520A031BA0827100F2CDAC /* StartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
+		91520A351BA1E65200F2CDAC /* SongInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongInfoViewController.swift; sourceTree = "<group>"; };
+		91520A371BA204C700F2CDAC /* BlockViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockViewController.swift; sourceTree = "<group>"; };
 		915CE5FB1B3B3F6100418517 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		915CE5FC1B3B3F6100418517 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		91A9F07D1B0E508B000770BD /* Ai!SingAlong.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ai!SingAlong.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -118,15 +124,7 @@
 		91D110C21B441FAB00F5C51A /* CustomButtons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomButtons.swift; sourceTree = "<group>"; };
 		91D110F61B442E9D00F5C51A /* GradientView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		91D110FE1B445EDD00F5C51A /* RunSetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RunSetViewController.swift; sourceTree = "<group>"; };
-		91EFB6841B8B5BC100AA1983 /* SetMenuTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetMenuTableViewController.h; sourceTree = "<group>"; };
-		91EFB6851B8B5BC100AA1983 /* SetMenuTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetMenuTableViewController.m; sourceTree = "<group>"; };
 		91EFB6881B8B788700AA1983 /* NewEditSet.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = NewEditSet.storyboard; sourceTree = "<group>"; };
-		91EFB68A1B8B7AD800AA1983 /* NewSetViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewSetViewController.h; sourceTree = "<group>"; };
-		91EFB68B1B8B7AD900AA1983 /* NewSetViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewSetViewController.m; sourceTree = "<group>"; };
-		91EFB68D1B8CCAB600AA1983 /* SetlistMenuViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetlistMenuViewController.h; sourceTree = "<group>"; };
-		91EFB68E1B8CCAB600AA1983 /* SetlistMenuViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetlistMenuViewController.m; sourceTree = "<group>"; };
-		91EFB6901B8CCC9C00AA1983 /* SetlistMenuCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SetlistMenuCell.h; sourceTree = "<group>"; };
-		91EFB6911B8CCC9C00AA1983 /* SetlistMenuCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SetlistMenuCell.m; sourceTree = "<group>"; };
 		91EFB6931B8F546200AA1983 /* Notes.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = Notes.playground; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -206,7 +204,6 @@
 		91A9F07F1B0E508B000770BD /* Ai!SingAlong */ = {
 			isa = PBXGroup;
 			children = (
-				91031FDC1B448FC800F2FE36 /* RunAndWatch.storyboard */,
 				91D1109A1B433A8E00F5C51A /* MainMenuFlow */,
 				91EFB6871B8B766600AA1983 /* NewEditSet */,
 				91D110A31B4340E300F5C51A /* AddSongFlow */,
@@ -259,12 +256,11 @@
 			isa = PBXGroup;
 			children = (
 				91A9F0861B0E508B000770BD /* Main.storyboard */,
-				91EFB6841B8B5BC100AA1983 /* SetMenuTableViewController.h */,
-				91EFB6851B8B5BC100AA1983 /* SetMenuTableViewController.m */,
-				9127AF701B792631005FB1CF /* SetCell.h */,
-				9127AF711B792631005FB1CF /* SetCell.m */,
-				9127AF6A1B791E48005FB1CF /* SetOptionViewController.h */,
-				9127AF6B1B791E48005FB1CF /* SetOptionViewController.m */,
+				91520A031BA0827100F2CDAC /* StartViewController.swift */,
+				91082E161B9F393100C06D66 /* SetMenuTableViewController.swift */,
+				91082E181B9F3A4D00C06D66 /* NewSetViewController.swift */,
+				91082E1C1B9F59C200C06D66 /* SetCell.swift */,
+				91082E1E1B9F5A9300C06D66 /* SetOptionViewController.swift */,
 			);
 			name = MainMenuFlow;
 			sourceTree = "<group>";
@@ -275,7 +271,6 @@
 				91031FDA1B448FAC00F2FE36 /* AddSong.storyboard */,
 				91D110A41B43442800F5C51A /* AddSongViewController.swift */,
 				91D110A61B43445A00F5C51A /* SongDetailViewController.swift */,
-				91D110A81B4344E600F5C51A /* EditBlockViewController.swift */,
 				91D110AA1B43453900F5C51A /* SongSearchViewController.swift */,
 				91D110AC1B434B7900F5C51A /* AlmostDoneViewController.swift */,
 				91D110AE1B434B8800F5C51A /* SaveSetViewController.swift */,
@@ -306,12 +301,11 @@
 			isa = PBXGroup;
 			children = (
 				91EFB6881B8B788700AA1983 /* NewEditSet.storyboard */,
-				91EFB68A1B8B7AD800AA1983 /* NewSetViewController.h */,
-				91EFB68B1B8B7AD900AA1983 /* NewSetViewController.m */,
-				91EFB68D1B8CCAB600AA1983 /* SetlistMenuViewController.h */,
-				91EFB68E1B8CCAB600AA1983 /* SetlistMenuViewController.m */,
-				91EFB6901B8CCC9C00AA1983 /* SetlistMenuCell.h */,
-				91EFB6911B8CCC9C00AA1983 /* SetlistMenuCell.m */,
+				91082E1A1B9F57B500C06D66 /* SetlistMenuViewController.swift */,
+				91082E201B9F5ED900C06D66 /* SetlistMenuCell.swift */,
+				91520A351BA1E65200F2CDAC /* SongInfoViewController.swift */,
+				91520A371BA204C700F2CDAC /* BlockViewController.swift */,
+				91D110A81B4344E600F5C51A /* EditBlockViewController.swift */,
 			);
 			name = NewEditSet;
 			sourceTree = "<group>";
@@ -411,7 +405,6 @@
 				91D110BB1B441D4B00F5C51A /* Quicksand_Light_Oblique.otf in Resources */,
 				91A9F08A1B0E508B000770BD /* Images.xcassets in Resources */,
 				91D110BF1B441D6100F5C51A /* coolvetica rg.ttf in Resources */,
-				91031FDD1B448FC800F2FE36 /* RunAndWatch.storyboard in Resources */,
 				91031FDB1B448FAC00F2FE36 /* AddSong.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -446,24 +439,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91082E1D1B9F59C200C06D66 /* SetCell.swift in Sources */,
+				91520A361BA1E65200F2CDAC /* SongInfoViewController.swift in Sources */,
+				91082E211B9F5ED900C06D66 /* SetlistMenuCell.swift in Sources */,
 				91D110A91B4344E600F5C51A /* EditBlockViewController.swift in Sources */,
 				91D110AF1B434B8800F5C51A /* SaveSetViewController.swift in Sources */,
-				91EFB6861B8B5BC100AA1983 /* SetMenuTableViewController.m in Sources */,
-				91EFB6921B8CCC9C00AA1983 /* SetlistMenuCell.m in Sources */,
 				91D110AD1B434B7900F5C51A /* AlmostDoneViewController.swift in Sources */,
 				91D110C31B441FAB00F5C51A /* CustomButtons.swift in Sources */,
 				91D110A51B43442800F5C51A /* AddSongViewController.swift in Sources */,
-				91EFB68C1B8B7AD900AA1983 /* NewSetViewController.m in Sources */,
+				91082E191B9F3A4D00C06D66 /* NewSetViewController.swift in Sources */,
+				91082E1F1B9F5A9300C06D66 /* SetOptionViewController.swift in Sources */,
+				91520A381BA204C700F2CDAC /* BlockViewController.swift in Sources */,
 				91D110F71B442E9D00F5C51A /* GradientView.swift in Sources */,
 				91D110AB1B43453900F5C51A /* SongSearchViewController.swift in Sources */,
-				9127AF721B792631005FB1CF /* SetCell.m in Sources */,
+				91082E171B9F393100C06D66 /* SetMenuTableViewController.swift in Sources */,
 				91D110B11B434B9400F5C51A /* WhatNowViewController.swift in Sources */,
 				91D110A71B43445A00F5C51A /* SongDetailViewController.swift in Sources */,
+				91520A041BA0827100F2CDAC /* StartViewController.swift in Sources */,
 				91D110FF1B445EDD00F5C51A /* RunSetViewController.swift in Sources */,
 				91A9F0831B0E508B000770BD /* AppDelegate.swift in Sources */,
-				9127AF6C1B791E48005FB1CF /* SetOptionViewController.m in Sources */,
 				91031FDF1B44925300F2FE36 /* WatchSetViewController.swift in Sources */,
-				91EFB68F1B8CCAB600AA1983 /* SetlistMenuViewController.m in Sources */,
+				91082E1B1B9F57B500C06D66 /* SetlistMenuViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
