@@ -267,6 +267,9 @@
                                         <real key="value" value="0.0"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="editBlocksPressed:" destination="ze3-JK-Hu0" eventType="touchUpInside" id="j7B-Ii-zaQ"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Year" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9qe-Kg-mJm">
                                 <rect key="frame" x="34" y="468" width="550" height="30"/>
@@ -348,7 +351,7 @@
                     <connections>
                         <outlet property="albumField" destination="a7o-9T-TUK" id="KP7-QZ-Miu"/>
                         <outlet property="artistField" destination="9A6-Wf-BHO" id="tTo-Th-7SH"/>
-                        <outlet property="editBlocksPressed" destination="m9i-wu-e8I" id="gmm-lN-efT"/>
+                        <outlet property="bottomConstraint" destination="Ds8-6Q-Ov1" id="BRE-sP-ZC4"/>
                         <outlet property="songNameField" destination="HV7-Re-MYM" id="oUt-eX-96C"/>
                         <outlet property="yearField" destination="9qe-Kg-mJm" id="cFY-ak-ake"/>
                     </connections>
@@ -357,10 +360,10 @@
             </objects>
             <point key="canvasLocation" x="4665" y="1037"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Block View Controller-->
         <scene sceneID="n3h-Ls-K35">
             <objects>
-                <tableViewController id="0zF-Tw-Uv2" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="blockVC" id="0zF-Tw-Uv2" customClass="BlockViewController" customModule="Ai_SingAlong" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="246" sectionHeaderHeight="22" sectionFooterHeight="22" id="tE4-FG-yhv">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -540,12 +543,12 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZQS-Oz-VDC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3996" y="1737"/>
+            <point key="canvasLocation" x="5312" y="1037"/>
         </scene>
-        <!--View Controller-->
+        <!--Edit Block View Controller-->
         <scene sceneID="gs9-8t-Hc4">
             <objects>
-                <viewController id="leo-LZ-JfR" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="editBlockVC" id="leo-LZ-JfR" customClass="EditBlockViewController" customModule="Ai_SingAlong" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="vQa-ec-MUn"/>
                         <viewControllerLayoutGuide type="bottom" id="EWa-4l-q4E"/>
@@ -667,7 +670,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kOM-5z-irq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3996" y="2446"/>
+            <point key="canvasLocation" x="5959" y="1037"/>
         </scene>
     </scenes>
 </document>

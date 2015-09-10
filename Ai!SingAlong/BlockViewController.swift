@@ -1,20 +1,15 @@
 //
-//  SetlistMenuViewController.swift
+//  BlockViewController.swift
 //  Ai!SingAlong
 //
-//  Created by Kyle Brooks Robinson on 9/8/15.
+//  Created by Kyle Brooks Robinson on 9/10/15.
 //  Copyright (c) 2015 Kyle Brooks Robinson. All rights reserved.
 //
 
 import UIKit
-import Parse
-import Bolts
 
-class SetlistMenuViewController: UITableViewController {
+class BlockViewController: UITableViewController {
 
-    var setToLoad: String!
-    var setData = []
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -23,87 +18,36 @@ class SetlistMenuViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
-                
-    }
-    
-    override func viewDidAppear(animated: Bool) {
-        
-        loadInfo()
-        
-        self.navigationController?.setToolbarHidden(false, animated: false)
-        
     }
 
-    func loadInfo() {
-        
-        println("Name of set to load: \(setToLoad)")
-        
-        let setQuery: PFQuery = PFQuery(className: setToLoad)
-        
-        setQuery.findObjectsInBackgroundWithBlock { (setlistInfo, error) -> Void in
-            
-            self.setData = setlistInfo!
-            
-            self.tableView.reloadData()
-            
-            println("Set Data: \(self.setData)")
-            
-            println("Set Data Count: \(self.setData.count)")
-            
-        }
-        
-        
-        
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
-    
-    
-    
 
     // MARK: - Table view data source
 
-//    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-//        // #warning Potentially incomplete method implementation.
-//        // Return the number of sections.
-//        return 0
-//    }
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        // #warning Potentially incomplete method implementation.
+        // Return the number of sections.
+        return 0
+    }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        
-        return setData.count
+        return 0
     }
 
-    
+    /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("setlistMenuCell", forIndexPath: indexPath) as! SetlistMenuCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath) as! UITableViewCell
 
-        if let albumName = setData[indexPath.row]["albumName"] as? String {
-            
-            let year = setData[indexPath.row]["albumYear"] as? Int
-            
-            let fullLabel = "\(albumName), \(year!)"
-            
-            cell.songName.text = setData[indexPath.row]["songName"] as? String
-            cell.albumName.text = fullLabel
-            cell.artistName.text = setData[indexPath.row]["artistName"] as? String
-            
-        }
-        
+        // Configure the cell...
+
         return cell
-        
     }
-    
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
-        let songInfoVC = storyboard?.instantiateViewControllerWithIdentifier("songInfoVC") as! SongInfoViewController
-        
-        songInfoVC.objectId = setData[indexPath.row].objectId
-        songInfoVC.setId = setToLoad
-        
-        self.navigationController?.pushViewController(songInfoVC, animated: true)
-        
-    }
+    */
 
     /*
     // Override to support conditional editing of the table view.

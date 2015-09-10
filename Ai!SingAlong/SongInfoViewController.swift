@@ -7,16 +7,43 @@
 //
 
 import UIKit
+import Parse
+import Bolts
 
 class SongInfoViewController: UIViewController {
 
+    var objectId: String!
+    var setId: String!
+    
     @IBOutlet weak var songNameField: UITextField!
     @IBOutlet weak var artistField: UITextField!
     @IBOutlet weak var albumField: UITextField!
     @IBOutlet weak var yearField: UITextField!
     
+    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        NSNotificationCenter.defaultCenter().addObserverForName(UIKeyboardWillChangeFrameNotification, object: nil, queue: NSOperationQueue.mainQueue()) { (notification) -> Void in
+            
+            self.view.setNeedsUpdateConstraints()
+            self.view.setNeedsLayout()
+            
+            if let kbSize = notification.userInfo?[UIKeyboardFrameEndUserInfoKey]?.CGRectValue().size{
+                
+                self.bottomConstraint.constant = 20 + kbSize.height
+                
+            }
+            
+        }
+        
+        NSNotificationCenter.defaultCenter().addObserverForName(UIKeyboardDidHideNotification, object: nil, queue: NSOperationQueue.mainQueue()) { (notification) -> Void in
+            
+            self.bottomConstraint.constant = 20
+            
+            // Do any additional setup after loading the view.
+        }
 
         // Do any additional setup after loading the view.
     }
@@ -26,7 +53,31 @@ class SongInfoViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBOutlet weak var editBlocksPressed: MainButton!
+    @IBAction func editBlocksPressed(sender: AnyObject) {
+        
+        let query = PFQuery(className: setId)
+        
+        query.getObjectInBackgroundWithId(objectId, block: { (songInfo: PFObject?, error: NSError?) -> Void in
+            
+            if error != nil {
+                
+                println("Whoopsy daisy, you've got error, fool.")
+                
+            } else if let songInfo = songInfo {
+                
+                songInfo["artistName"] = self.artistField.text
+                songInfo["songName"] = self.songNameField.text
+                songInfo["albumName"] = self.albumField.text
+                songInfo["albumYear"] = (self.yearField.text).toInt()
+                
+            }
+            
+        })
+        
+        
+        
+        
+    }
 
     /*
     // MARK: - Navigation

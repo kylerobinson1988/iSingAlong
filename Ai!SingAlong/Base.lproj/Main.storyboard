@@ -481,6 +481,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="bottomConstraint" destination="hcc-9s-ozM" id="3st-bD-Fod"/>
                         <outlet property="confirmPassword" destination="Hni-NM-yFg" id="Exs-Zj-vrm"/>
                         <outlet property="passwordField" destination="pSH-Wb-5CF" id="HpS-s5-XCZ"/>
                         <outlet property="setlistName" destination="CB4-JT-pmr" id="vAV-Ex-Ckk"/>
