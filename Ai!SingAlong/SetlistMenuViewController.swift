@@ -12,7 +12,7 @@ import Bolts
 
 class SetlistMenuViewController: UITableViewController {
 
-    var setToLoad = ""
+    var setToLoad: String!
     var setData = []
     
     override func viewDidLoad() {
@@ -23,9 +23,20 @@ class SetlistMenuViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+                
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        
+        loadInfo()
+        
+        self.navigationController?.setToolbarHidden(false, animated: false)
+        
     }
 
     func loadInfo() {
+        
+        println("Name of set to load: \(setToLoad)")
         
         let setQuery: PFQuery = PFQuery(className: setToLoad)
         
@@ -35,7 +46,13 @@ class SetlistMenuViewController: UITableViewController {
             
             self.tableView.reloadData()
             
+            println("Set Data: \(self.setData)")
+            
+            println("Set Data Count: \(self.setData.count)")
+            
         }
+        
+        
         
     }
     
@@ -53,6 +70,7 @@ class SetlistMenuViewController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
+        
         return setData.count
     }
 
@@ -60,14 +78,18 @@ class SetlistMenuViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("setlistMenuCell", forIndexPath: indexPath) as! SetlistMenuCell
 
-        let albumName = setData[indexPath.row]["albumName"]
-        let year = setData[indexPath.row]["albumYear"]
-        let fullLabel = "\(albumName), \(year)"
+        if let albumName = setData[indexPath.row]["albumName"] as? String {
+            
+            let year = setData[indexPath.row]["albumYear"] as? Int
+            
+            let fullLabel = "\(albumName), \(year!)"
+            
+            cell.songName.text = setData[indexPath.row]["songName"] as? String
+            cell.albumName.text = fullLabel
+            cell.artistName.text = setData[indexPath.row]["artistName"] as? String
+            
+        }
         
-        cell.songName.text = setData[indexPath.row]["songName"] as? String
-        cell.albumName.text = fullLabel
-        cell.artistName.text = setData[indexPath.row]["artistName"] as? String
-
         return cell
         
     }

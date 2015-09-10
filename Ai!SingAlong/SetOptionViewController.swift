@@ -14,8 +14,9 @@ class SetOptionViewController: UIViewController {
 
     @IBOutlet weak var setlistName: UILabel!
     
-    var identifier = ""
-    var password = ""
+    var identifier: String!
+    var password: String?
+    var name: String!
     
     //setlistName
     
@@ -28,6 +29,7 @@ class SetOptionViewController: UIViewController {
 
     override func viewDidAppear(animated: Bool) {
         
+        self.navigationController?.setToolbarHidden(true, animated: true)
         
     }
     

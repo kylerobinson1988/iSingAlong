@@ -32,6 +32,8 @@ class SetMenuTableViewController: UITableViewController {
         
         self.navigationController?.setToolbarHidden(false, animated: true)
         
+        loadParseData()
+        
     }
 
     func loadParseData() {
@@ -87,10 +89,22 @@ class SetMenuTableViewController: UITableViewController {
         
         let setOptionVC = storyboard?.instantiateViewControllerWithIdentifier("setOptionVC") as! SetOptionViewController
         
+        setOptionVC.identifier = setlists[indexPath.row]["identifier"] as? String
+        setOptionVC.name = setlists[indexPath.row]["name"] as? String
+        
+        if let password = setlists[indexPath.row]["password"] as? String {
+            
+            if password != "none" {
+                
+                setOptionVC.password = password
+                
+            }
+            
+        }
+        
         self.navigationController?.setToolbarHidden(true, animated: true)
         
         self.navigationController?.pushViewController(setOptionVC, animated: true)
-        
         
     }
     

@@ -28,6 +28,7 @@
 		9127AF891B7A36B8005FB1CF /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9127AF7F1B7A36B8005FB1CF /* StoreKit.framework */; };
 		9127AF8A1B7A36B8005FB1CF /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9127AF801B7A36B8005FB1CF /* SystemConfiguration.framework */; };
 		91520A041BA0827100F2CDAC /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91520A031BA0827100F2CDAC /* StartViewController.swift */; };
+		91520A361BA1E65200F2CDAC /* SongInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91520A351BA1E65200F2CDAC /* SongInfoViewController.swift */; };
 		915CE5FD1B3B3F6100418517 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 915CE5FB1B3B3F6100418517 /* Fabric.framework */; };
 		915CE5FE1B3B3F6100418517 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 915CE5FC1B3B3F6100418517 /* Crashlytics.framework */; };
 		91A9F0831B0E508B000770BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A9F0821B0E508B000770BD /* AppDelegate.swift */; };
@@ -90,6 +91,7 @@
 		9127AF7F1B7A36B8005FB1CF /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		9127AF801B7A36B8005FB1CF /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		91520A031BA0827100F2CDAC /* StartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
+		91520A351BA1E65200F2CDAC /* SongInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SongInfoViewController.swift; sourceTree = "<group>"; };
 		915CE5FB1B3B3F6100418517 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		915CE5FC1B3B3F6100418517 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
 		91A9F07D1B0E508B000770BD /* Ai!SingAlong.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ai!SingAlong.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -300,6 +302,7 @@
 				91EFB6881B8B788700AA1983 /* NewEditSet.storyboard */,
 				91082E1A1B9F57B500C06D66 /* SetlistMenuViewController.swift */,
 				91082E201B9F5ED900C06D66 /* SetlistMenuCell.swift */,
+				91520A351BA1E65200F2CDAC /* SongInfoViewController.swift */,
 			);
 			name = NewEditSet;
 			sourceTree = "<group>";
@@ -434,6 +437,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				91082E1D1B9F59C200C06D66 /* SetCell.swift in Sources */,
+				91520A361BA1E65200F2CDAC /* SongInfoViewController.swift in Sources */,
 				91082E211B9F5ED900C06D66 /* SetlistMenuCell.swift in Sources */,
 				91D110A91B4344E600F5C51A /* EditBlockViewController.swift in Sources */,
 				91D110AF1B434B8800F5C51A /* SaveSetViewController.swift in Sources */,

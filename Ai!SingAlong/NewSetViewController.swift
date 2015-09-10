@@ -25,6 +25,20 @@ class NewSetViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
+    func createDate() -> String {
+        
+        let formatter = NSDateFormatter()
+        formatter.dateStyle = NSDateFormatterStyle.MediumStyle
+        formatter.timeStyle = NSDateFormatterStyle.ShortStyle
+        let date = NSDate()
+        
+        let dateString = formatter.stringFromDate(date)
+        println("Date String! \(dateString)")
+        
+        return dateString
+        
+    }
+    
     @IBAction func createButtonPressed(sender: AnyObject) {
         
         if setlistName.text != "" {
@@ -38,6 +52,8 @@ class NewSetViewController: UIViewController {
                 
                 let setlistUpdate: PFObject = PFObject(className: "setlist")
                 setlistUpdate["identifier"] = finalName
+                setlistUpdate["name"] = setName
+                setlistUpdate["date"] = createDate()
                 
                 if password != "" {
                     
@@ -49,7 +65,20 @@ class NewSetViewController: UIViewController {
                     
                 }
                 
+                let newClass: PFObject = PFObject(className: finalName)
+                newClass["songName"] = "Song name"
+                newClass["artistName"] = "Artist name"
+                newClass["albumName"] = "Album name"
+                newClass["albumYear"] = 2015
+                newClass["numberOfBlocks"] = 4
+                newClass["firstBlock"] = "First block"
+                newClass["secondBlock"] = "Second block"
+                newClass["thirdBlock"] = "Third block"
+                newClass["fourthBlock"] = "Fourth block"
+                
+                
                 callAlert("Save", message: "Save new setlist?", canCancel: true, completion: { () -> Void in
+                    
                     
                     setlistUpdate.saveInBackgroundWithBlock({ (succeeded, error) -> Void in
                         
@@ -57,9 +86,7 @@ class NewSetViewController: UIViewController {
                             
                             println("Setlist class updated.")
                             
-                            let newSet = PFObject(className: finalName)
-                            
-                            newSet.saveInBackgroundWithBlock({ (succeeded, error) -> Void in
+                            newClass.saveInBackgroundWithBlock({ (succeeded, error) -> Void in
                                 
                                 if succeeded {
                                     
@@ -128,7 +155,7 @@ class NewSetViewController: UIViewController {
         self.presentViewController(myAlert, animated: true, completion: nil)
         
     }
-
+    
     @IBAction func backButtonPressed(sender: AnyObject) {
         
         dismissViewControllerAnimated(true, completion: nil)

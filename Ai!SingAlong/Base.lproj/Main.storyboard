@@ -29,7 +29,7 @@
                         <viewControllerLayoutGuide type="top" id="j3s-iG-VMH"/>
                         <viewControllerLayoutGuide type="bottom" id="a4z-gx-uEg"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="bhp-lV-0AX" customClass="GradientView" customModule="Ai_SingAlong" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="bhp-lV-0AX">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -74,8 +74,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="editSet:" destination="DEm-O3-Xla" eventType="touchUpInside" id="o1e-Pj-9gT"/>
-                                    <action selector="editSetPressed:" destination="DEm-O3-Xla" eventType="touchUpInside" id="fmy-cC-rW3"/>
+                                    <action selector="editSetPressed:" destination="DEm-O3-Xla" eventType="touchUpInside" id="hR4-Jb-SAf"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="HXh-Oh-AaW" customClass="MainButton" customModule="Ai_SingAlong" customModuleProvider="target">
@@ -142,7 +141,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="HXh-Oh-AaW" firstAttribute="leading" secondItem="bhp-lV-0AX" secondAttribute="leading" constant="16" id="1S1-Xs-aEo"/>
                             <constraint firstItem="9oy-iQ-Ks6" firstAttribute="leading" secondItem="bhp-lV-0AX" secondAttribute="leading" constant="16" id="2aC-6e-JIW"/>
@@ -164,20 +163,6 @@
                             <constraint firstItem="3YF-ZR-P9r" firstAttribute="top" secondItem="HXh-Oh-AaW" secondAttribute="bottom" constant="8" id="yMA-6S-hQA"/>
                             <constraint firstAttribute="trailing" secondItem="3YF-ZR-P9r" secondAttribute="trailing" constant="16" id="zaX-4m-KL4"/>
                         </constraints>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="color" keyPath="firstColor">
-                                <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                            </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="color" keyPath="secondColor">
-                                <color key="value" red="0.24328837986552002" green="0.24500574196984712" blue="0.25015782828282829" alpha="1" colorSpace="calibratedRGB"/>
-                            </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="point" keyPath="startPoint">
-                                <point key="value" x="0.5" y="1"/>
-                            </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="point" keyPath="endPoint">
-                                <point key="value" x="1" y="0.0"/>
-                            </userDefinedRuntimeAttribute>
-                        </userDefinedRuntimeAttributes>
                         <variation key="default">
                             <mask key="constraints">
                                 <exclude reference="xhe-VX-mIa"/>
@@ -494,20 +479,6 @@
                             <constraint firstItem="pSH-Wb-5CF" firstAttribute="top" secondItem="CB4-JT-pmr" secondAttribute="bottom" constant="14" id="wVE-hV-aHk"/>
                             <constraint firstItem="Ol0-q6-HwK" firstAttribute="leading" secondItem="3LC-O6-aI9" secondAttribute="leading" constant="16" id="xH4-w9-kYK"/>
                         </constraints>
-                        <userDefinedRuntimeAttributes>
-                            <userDefinedRuntimeAttribute type="color" keyPath="firstColor">
-                                <color key="value" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                            </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="color" keyPath="secondColor">
-                                <color key="value" red="0.24328837989999999" green="0.245005742" blue="0.2501578283" alpha="1" colorSpace="calibratedRGB"/>
-                            </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="point" keyPath="startPoint">
-                                <point key="value" x="0.0" y="1"/>
-                            </userDefinedRuntimeAttribute>
-                            <userDefinedRuntimeAttribute type="point" keyPath="endPoint">
-                                <point key="value" x="1" y="0.0"/>
-                            </userDefinedRuntimeAttribute>
-                        </userDefinedRuntimeAttributes>
                     </view>
                     <connections>
                         <outlet property="confirmPassword" destination="Hni-NM-yFg" id="Exs-Zj-vrm"/>
