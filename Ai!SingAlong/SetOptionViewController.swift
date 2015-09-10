@@ -26,6 +26,11 @@ class SetOptionViewController: UIViewController {
     
     }
 
+    override func viewDidAppear(animated: Bool) {
+        
+        
+    }
+    
     @IBAction func editSetPressed(sender: AnyObject) {
         
         let newEditSet = UIStoryboard(name: "NewEditSet", bundle: nil)

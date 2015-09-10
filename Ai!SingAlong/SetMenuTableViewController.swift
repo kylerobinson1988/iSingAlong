@@ -25,6 +25,14 @@ class SetMenuTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
+    
+    override func viewDidAppear(animated: Bool) {
+        
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
+        
+        self.navigationController?.setToolbarHidden(false, animated: true)
+        
+    }
 
     func loadParseData() {
         
@@ -78,6 +86,8 @@ class SetMenuTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
         let setOptionVC = storyboard?.instantiateViewControllerWithIdentifier("setOptionVC") as! SetOptionViewController
+        
+        self.navigationController?.setToolbarHidden(true, animated: true)
         
         self.navigationController?.pushViewController(setOptionVC, animated: true)
         

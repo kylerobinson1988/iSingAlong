@@ -27,8 +27,6 @@ class NewSetViewController: UIViewController {
     
     @IBAction func createButtonPressed(sender: AnyObject) {
         
-        println("Create Button pressed.")
-        
         if setlistName.text != "" {
             
             if passwordField.text == confirmPassword.text {
@@ -45,72 +43,89 @@ class NewSetViewController: UIViewController {
                     
                     setlistUpdate["password"] = password
                     
+                } else {
+                    
+                    setlistUpdate["password"] = "none"
+                    
                 }
                 
-                setlistUpdate.saveInBackgroundWithBlock({ (succeeded, error) -> Void in
+                callAlert("Save", message: "Save new setlist?", canCancel: true, completion: { () -> Void in
                     
-                    if succeeded {
+                    setlistUpdate.saveInBackgroundWithBlock({ (succeeded, error) -> Void in
                         
-                        println("Setlist class updated.")
-                        
-                        let newSet = PFObject(className: finalName)
-                        newSet["name"] = setName
-                        
-                        newSet.saveInBackgroundWithBlock({ (succeeded, error) -> Void in
+                        if succeeded {
                             
-                            if succeeded {
-                                
-                                println("New set class created.")
-                                
-                                let setlistMenuVC = self.storyboard?.instantiateViewControllerWithIdentifier("setlistMenuVC") as! SetlistMenuViewController
-                                
-                                setlistMenuVC.setToLoad = finalName
-                                
-                                self.navigationController?.pushViewController(setlistMenuVC, animated: true)
-                                
-                            } else {
-                                
-                                println("Something just went haywire.")
-                                
-                            }
+                            println("Setlist class updated.")
                             
-                        })
+                            let newSet = PFObject(className: finalName)
+                            
+                            newSet.saveInBackgroundWithBlock({ (succeeded, error) -> Void in
+                                
+                                if succeeded {
+                                    
+                                    self.dismissViewControllerAnimated(true, completion: nil)
+                                    
+                                } else {
+                                    
+                                    println("Something just went haywire.")
+                                    
+                                }
+                                
+                            })
+                            
+                        } else {
+                            
+                            println("Something just went haywire.")
+                            
+                        }
                         
-                    } else {
-                        
-                        println("Something just went haywire.")
-                        
-                    }
+                    })
+                    
                     
                 })
                 
             } else {
                 
-                let errorAlert = UIAlertController(title: "Error", message: "Passwords don't match.", preferredStyle: UIAlertControllerStyle.Alert)
-                
-                let confirmAction = UIAlertAction(title: "OK", style: .Default) { (action: UIAlertAction!) -> Void in
-                    
-                }
-                
-                errorAlert.addAction(confirmAction)
-                
-                self.presentViewController(errorAlert, animated: true, completion: nil)
+                callAlert("Error", message: "Passwords don't match.", canCancel: false, completion: nil)
                 
             }
             
         } else {
+        
+            callAlert("Error", message: "Please enter a name for your setlist.", canCancel: false, completion: nil)
             
-            let errorAlert = UIAlertController(title: "Error", message: "Please enter a name for your setlist.", preferredStyle: UIAlertControllerStyle.Alert)
+        
+        }
+        
+    }
+    
+    func callAlert(title: String, message: String, canCancel: Bool, completion: (() -> Void)?) {
+        
+        let myAlert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
+        
+        let confirmAction = UIAlertAction(title: "OK", style: .Default) { (action: UIAlertAction!) -> Void in
             
-            let confirmAction = UIAlertAction(title: "OK", style: .Default) { (action: UIAlertAction!) -> Void in
+            if completion != nil {
+                
+                completion!()
                 
             }
             
-            errorAlert.addAction(confirmAction)
+        }
+        
+        myAlert.addAction(confirmAction)
+        
+        if canCancel == true {
             
-            self.presentViewController(errorAlert, animated: true, completion: nil)
+            let cancelAction = UIAlertAction(title: "Cancel", style: .Default) { (action: UIAlertAction!) -> Void in
+                
+            }
+            
+            myAlert.addAction(cancelAction)
             
         }
+        
+        self.presentViewController(myAlert, animated: true, completion: nil)
         
     }
 
