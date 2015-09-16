@@ -7,23 +7,85 @@
 //
 
 import UIKit
+import Parse
+import Bolts
 
-class BlockViewController: UITableViewController {
+class BlockViewController: UITableViewController, blockEditDelegate {
 
+    let blockPicker = EditBlockViewController()
+    
+    var songId: String!
+    var songData: [ParseData] = []
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        
+        
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func loadInfo() {
+        
+        let setQuery: PFQuery = PFQuery(className: songId)
+        
+        setQuery.getObjectInBackgroundWithId(songId, block: { (songResponse, error) -> Void in
+            
+            if error == nil {
+                
+                let infoFromParse = songResponse as! [[String:AnyObject]]
+                
+                for item in infoFromParse {
+                    
+                    let title = songResponse[item]["blockTitle"]
+                    let block = songResponse[item]["blockTitle"]
+                    
+                    var parseBlockInfo = ParseData(blockContents: block, blockTitle: title)
+                    
+                }
+                
+            } else {
+                
+                println("Error with data: \(error)")
+                
+            }
+            
+            
+        })
+        
+            
+            self.tableView.reloadData()
+            
+            println("Set Data: \(self.songData)")
+        
     }
+    
+    @IBAction func addButtonPressed(sender: AnyObject) {
+        
+        let editBlockVC = storyboard?.instantiateViewControllerWithIdentifier("editBlockVC") as! EditBlockViewController
+        
+        editBlockVC.delegate = self
+        
+        navigationController?.presentViewController(editBlockVC, animated: true, completion: nil)
+        
+    }
+    
+    func editBlockDidFinish(blockInfo: ParseData) {
+        
+        songData.append(blockInfo)
+        
+        tableView.reloadData()
+        
+    }
+    
 
     // MARK: - Table view data source
 
@@ -36,7 +98,7 @@ class BlockViewController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return 0
+        return songData.count
     }
 
     /*

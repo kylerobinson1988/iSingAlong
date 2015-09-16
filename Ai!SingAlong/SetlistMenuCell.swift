@@ -15,6 +15,8 @@ class SetlistMenuCell: UITableViewCell {
     @IBOutlet weak var albumName: UILabel!
     @IBOutlet weak var songButton: MainButton!
     
+    var songId: String!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

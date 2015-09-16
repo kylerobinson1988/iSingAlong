@@ -56,6 +56,18 @@ class SetlistMenuViewController: UITableViewController {
         
     }
     
+    @IBAction func addButtonClicked(sender: AnyObject) {
+        
+        let editSongNavVC = storyboard?.instantiateViewControllerWithIdentifier("editSongNavVC") as! UINavigationController
+        
+        let infoVC = (editSongNavVC.viewControllers[0] as! SongInfoViewController)
+        
+        infoVC.setId = setToLoad
+//        infoVC.objectId = 
+        
+        presentViewController(editSongNavVC, animated: true, completion: nil)
+        
+    }
     
     
 
@@ -113,17 +125,25 @@ class SetlistMenuViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // Override to support editing the table view.
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
-            // Delete the row from the data source
+            
+            let query = PFQuery(className: setToLoad)
+            
+            let objectToDelete = setData[indexPath.row].objectId!
+            
+            let deletion = query.getObjectWithId(objectToDelete!)
+            
+            deletion?.deleteInBackground()
+            
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
         } else if editingStyle == .Insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
-    */
+    
 
     /*
     // Override to support rearranging the table view.

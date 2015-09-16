@@ -32,6 +32,7 @@
 		91520A381BA204C700F2CDAC /* BlockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91520A371BA204C700F2CDAC /* BlockViewController.swift */; };
 		915CE5FD1B3B3F6100418517 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 915CE5FB1B3B3F6100418517 /* Fabric.framework */; };
 		915CE5FE1B3B3F6100418517 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 915CE5FC1B3B3F6100418517 /* Crashlytics.framework */; };
+		918E355D1BAA0169003067E4 /* ParseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918E355C1BAA0169003067E4 /* ParseData.swift */; };
 		91A9F0831B0E508B000770BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91A9F0821B0E508B000770BD /* AppDelegate.swift */; };
 		91A9F0881B0E508B000770BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 91A9F0861B0E508B000770BD /* Main.storyboard */; };
 		91A9F08A1B0E508B000770BD /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91A9F0891B0E508B000770BD /* Images.xcassets */; };
@@ -96,6 +97,7 @@
 		91520A371BA204C700F2CDAC /* BlockViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockViewController.swift; sourceTree = "<group>"; };
 		915CE5FB1B3B3F6100418517 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		915CE5FC1B3B3F6100418517 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		918E355C1BAA0169003067E4 /* ParseData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseData.swift; sourceTree = "<group>"; };
 		91A9F07D1B0E508B000770BD /* Ai!SingAlong.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Ai!SingAlong.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		91A9F0811B0E508B000770BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		91A9F0821B0E508B000770BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -306,6 +308,7 @@
 				91520A351BA1E65200F2CDAC /* SongInfoViewController.swift */,
 				91520A371BA204C700F2CDAC /* BlockViewController.swift */,
 				91D110A81B4344E600F5C51A /* EditBlockViewController.swift */,
+				918E355C1BAA0169003067E4 /* ParseData.swift */,
 			);
 			name = NewEditSet;
 			sourceTree = "<group>";
@@ -446,6 +449,7 @@
 				91D110AF1B434B8800F5C51A /* SaveSetViewController.swift in Sources */,
 				91D110AD1B434B7900F5C51A /* AlmostDoneViewController.swift in Sources */,
 				91D110C31B441FAB00F5C51A /* CustomButtons.swift in Sources */,
+				918E355D1BAA0169003067E4 /* ParseData.swift in Sources */,
 				91D110A51B43442800F5C51A /* AddSongViewController.swift in Sources */,
 				91082E191B9F3A4D00C06D66 /* NewSetViewController.swift in Sources */,
 				91082E1F1B9F5A9300C06D66 /* SetOptionViewController.swift in Sources */,
