@@ -14,7 +14,7 @@ class SetCell: UITableViewCell {
     @IBOutlet weak var setName: UILabel!
     @IBOutlet weak var setDate: UILabel!
     
-    var identifier = ""
+    var identifier: String!
     var password = ""
     
     override func awakeFromNib() {

@@ -31,7 +31,7 @@ class SongInfoViewController: UIViewController {
             self.view.setNeedsUpdateConstraints()
             self.view.setNeedsLayout()
             
-            if let kbSize = notification.userInfo?[UIKeyboardFrameEndUserInfoKey]?.CGRectValue().size{
+            if let kbSize = notification.userInfo?[UIKeyboardFrameEndUserInfoKey]?.CGRectValue.size{
                 
                 self.bottomConstraint.constant = 20 + kbSize.height
                 
@@ -75,17 +75,17 @@ class SongInfoViewController: UIViewController {
                 
                 if error != nil {
                     
-                    println("Whoopsy daisy, you've got error, fool.")
+                    print("Whoopsy daisy, you've got error, fool.")
                     
                 } else if let songInfo = songInfo {
                     
-                    let songName = self.songNameField.text
+                    let songName = self.songNameField.text!
                     let blockName = "\(songName)block"
                     
                     songInfo["artistName"] = self.artistField.text
                     songInfo["songName"] = songName
                     songInfo["albumName"] = self.albumField.text
-                    songInfo["albumYear"] = (self.yearField.text).toInt()
+                    songInfo["albumYear"] = Int((self.yearField.text!))
                     songInfo["blocks"] = blockName
                     
                     
@@ -109,7 +109,7 @@ class SongInfoViewController: UIViewController {
                             
                         } else {
                             
-                            println("Error: \(error)")
+                            print("Error: \(error)")
                             
                         }
                         
@@ -131,7 +131,7 @@ class SongInfoViewController: UIViewController {
             songInfo["artistName"] = self.artistField.text
             songInfo["songName"] = songName
             songInfo["albumName"] = self.albumField.text
-            songInfo["albumYear"] = (self.yearField.text).toInt()
+            songInfo["albumYear"] = Int((self.yearField.text)!)
             songInfo["blocks"] = blockName
             
             let blockInfo = PFObject(className: blockName)
@@ -150,7 +150,7 @@ class SongInfoViewController: UIViewController {
                     
                 } else {
                     
-                    println("Error: \(error)")
+                    print("Error: \(error)")
                     
                 }
                 

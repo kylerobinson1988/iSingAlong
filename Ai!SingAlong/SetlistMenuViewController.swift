@@ -36,7 +36,7 @@ class SetlistMenuViewController: UITableViewController {
 
     func loadInfo() {
         
-        println("Name of set to load: \(setToLoad)")
+        print("Name of set to load: \(setToLoad)")
         
         let setQuery: PFQuery = PFQuery(className: setToLoad)
         
@@ -46,9 +46,9 @@ class SetlistMenuViewController: UITableViewController {
             
             self.tableView.reloadData()
             
-            println("Set Data: \(self.setData)")
+            print("Set Data: \(self.setData)")
             
-            println("Set Data Count: \(self.setData.count)")
+            print("Set Data Count: \(self.setData.count)")
             
         }
         

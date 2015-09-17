@@ -26,7 +26,7 @@ class NewSetViewController: UIViewController {
             self.view.setNeedsUpdateConstraints()
             self.view.setNeedsLayout()
             
-            if let kbSize = notification.userInfo?[UIKeyboardFrameEndUserInfoKey]?.CGRectValue().size{
+            if let kbSize = notification.userInfo?[UIKeyboardFrameEndUserInfoKey]?.CGRectValue.size{
                 
                 self.bottomConstraint.constant = 20 + kbSize.height
                 
@@ -51,7 +51,7 @@ class NewSetViewController: UIViewController {
         let date = NSDate()
         
         let dateString = formatter.stringFromDate(date)
-        println("Date String! \(dateString)")
+        print("Date String! \(dateString)")
         
         return dateString
         
@@ -63,14 +63,11 @@ class NewSetViewController: UIViewController {
             
             if passwordField.text == confirmPassword.text {
                 
-                let setName = setlistName.text
-                let setNumber = arc4random_uniform(100000)
-                let finalName = "\(setName)_\(setNumber)"
+                let name = setlistName.text!
                 let password = passwordField.text
                 
                 let setlistUpdate: PFObject = PFObject(className: "setlist")
-                setlistUpdate["identifier"] = finalName
-                setlistUpdate["name"] = setName
+                setlistUpdate["name"] = name
                 setlistUpdate["date"] = createDate()
                 
                 if password != "" {
@@ -83,26 +80,21 @@ class NewSetViewController: UIViewController {
                     
                 }
                 
-                let newClass: PFObject = PFObject(className: finalName)
+                let newClass: PFObject = PFObject(className: name)
                 newClass["songName"] = "Song name"
                 newClass["artistName"] = "Artist name"
                 newClass["albumName"] = "Album name"
                 newClass["albumYear"] = 2015
-                newClass["numberOfBlocks"] = 4
-                newClass["firstBlock"] = "First block"
-                newClass["secondBlock"] = "Second block"
-                newClass["thirdBlock"] = "Third block"
-                newClass["fourthBlock"] = "Fourth block"
                 
+                setlistUpdate["objectId"] = newClass.objectId
                 
                 callAlert("Save", message: "Save new setlist?", canCancel: true, completion: { () -> Void in
-                    
                     
                     setlistUpdate.saveInBackgroundWithBlock({ (succeeded, error) -> Void in
                         
                         if succeeded {
                             
-                            println("Setlist class updated.")
+                            print("Setlist class updated.")
                             
                             newClass.saveInBackgroundWithBlock({ (succeeded, error) -> Void in
                                 
@@ -112,7 +104,7 @@ class NewSetViewController: UIViewController {
                                     
                                 } else {
                                     
-                                    println("Something just went haywire.")
+                                    print("Something just went haywire.")
                                     
                                 }
                                 
@@ -120,7 +112,7 @@ class NewSetViewController: UIViewController {
                             
                         } else {
                             
-                            println("Something just went haywire.")
+                            print("Something just went haywire.")
                             
                         }
                         
@@ -148,7 +140,7 @@ class NewSetViewController: UIViewController {
         
         let myAlert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
         
-        let confirmAction = UIAlertAction(title: "OK", style: .Default) { (action: UIAlertAction!) -> Void in
+        let confirmAction = UIAlertAction(title: "OK", style: .Default) { (action: UIAlertAction) -> Void in
             
             if completion != nil {
                 
@@ -162,7 +154,7 @@ class NewSetViewController: UIViewController {
         
         if canCancel == true {
             
-            let cancelAction = UIAlertAction(title: "Cancel", style: .Default) { (action: UIAlertAction!) -> Void in
+            let cancelAction = UIAlertAction(title: "Cancel", style: .Default) { (action: UIAlertAction) -> Void in
                 
             }
             

@@ -358,6 +358,8 @@
 		91A9F0751B0E508B000770BD /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftMigration = 0700;
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = "Kyle Brooks Robinson";
 				TargetAttributes = {

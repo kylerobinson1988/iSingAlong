@@ -42,7 +42,7 @@ class SetMenuTableViewController: UITableViewController {
         
         setlistQuery.findObjectsInBackgroundWithBlock { (setlistInfo, error) -> Void in
             
-            println("Setlist Info: \(setlistInfo)")
+            print("Setlist Info: \(setlistInfo)")
             
             self.setlists = setlistInfo!
             
@@ -77,8 +77,11 @@ class SetMenuTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("setCell", forIndexPath: indexPath) as! SetCell
         
+        let identifier = setlists[indexPath.row].objectId
+        
         cell.setName.text = setlists[indexPath.row]["name"] as? String
         cell.setDate.text = setlists[indexPath.row]["date"] as? String
+        cell.identifier = identifier
 
         // Configure the cell...
 
@@ -89,7 +92,7 @@ class SetMenuTableViewController: UITableViewController {
         
         let setOptionVC = storyboard?.instantiateViewControllerWithIdentifier("setOptionVC") as! SetOptionViewController
         
-        setOptionVC.identifier = setlists[indexPath.row]["identifier"] as? String
+        setOptionVC.identifier = setlists[indexPath.row].objectId
         setOptionVC.name = setlists[indexPath.row]["name"] as? String
         
         if let password = setlists[indexPath.row]["password"] as? String {

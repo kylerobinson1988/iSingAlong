@@ -37,34 +37,36 @@ class BlockViewController: UITableViewController, blockEditDelegate {
         
         let setQuery: PFQuery = PFQuery(className: songId)
         
-        setQuery.getObjectInBackgroundWithId(songId, block: { (songResponse, error) -> Void in
+        setQuery.findObjectsInBackgroundWithBlock { (songResponse, error) -> Void in
             
             if error == nil {
                 
-                let infoFromParse = songResponse as! [[String:AnyObject]]
-                
-                for item in infoFromParse {
+                if let infoFromParse = songResponse as? [PFObject] {
                     
-                    let title = songResponse[item]["blockTitle"]
-                    let block = songResponse[item]["blockTitle"]
-                    
-                    var parseBlockInfo = ParseData(blockContents: block, blockTitle: title)
+                    for item in infoFromParse {
+                        
+                        let title = item["blockTitle"] as! String
+                        let block = item["blockTitle"] as! String
+                        
+                        let parseBlockInfo = ParseData(blockContents: block, blockTitle: title)
+                        
+                        self.songData.append(parseBlockInfo)
+                        
+                    }
                     
                 }
                 
             } else {
                 
-                println("Error with data: \(error)")
+                print("Error with data: \(error)")
                 
             }
             
+        }
             
-        })
-        
+        self.tableView.reloadData()
             
-            self.tableView.reloadData()
-            
-            println("Set Data: \(self.songData)")
+        print("Set Data: \(self.songData)")
         
     }
     

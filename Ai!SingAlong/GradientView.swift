@@ -17,7 +17,7 @@ import UIKit
     
     override func drawRect(rect: CGRect) {
         
-        var gl = CAGradientLayer()
+        let gl = CAGradientLayer()
         gl.frame = layer.bounds
         gl.colors = [firstColor.CGColor, secondColor.CGColor]
         gl.startPoint = startPoint

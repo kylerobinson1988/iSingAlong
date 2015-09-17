@@ -30,8 +30,8 @@ class EditBlockViewController: UIViewController {
 
     @IBAction func finishButtonPressed(sender: AnyObject) {
         
-        let title = blockTitle.text
-        let block = blockText.text
+        let title = blockTitle.text!
+        let block = blockText.text!
         
         let newBlock = ParseData(blockContents: block, blockTitle: title)
         
