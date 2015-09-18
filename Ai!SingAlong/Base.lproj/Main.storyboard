@@ -394,20 +394,6 @@
                                 <color key="textColor" red="0.99456411170000003" green="1" blue="0.95544422029999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kQz-Vr-UwA">
-                                <rect key="frame" x="16" y="28" width="65" height="64"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="65" id="BnA-zU-G1l"/>
-                                    <constraint firstAttribute="height" constant="64" id="pAR-Tn-jwx"/>
-                                </constraints>
-                                <state key="normal" title="Back">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="backButtonPressed:" destination="ojA-aG-vHA" eventType="touchUpInside" id="U4h-GF-KZr"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New Setlist" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VaK-Jk-hIs">
                                 <rect key="frame" x="8" y="100" width="584" height="46"/>
                                 <constraints>
@@ -463,7 +449,6 @@
                         <constraints>
                             <constraint firstItem="Ol0-q6-HwK" firstAttribute="top" secondItem="Hni-NM-yFg" secondAttribute="bottom" constant="14" id="2UJ-Q2-QFB"/>
                             <constraint firstItem="pSH-Wb-5CF" firstAttribute="leading" secondItem="3LC-O6-aI9" secondAttribute="leading" constant="16" id="4Bi-eg-aHs"/>
-                            <constraint firstItem="kQz-Vr-UwA" firstAttribute="leading" secondItem="3LC-O6-aI9" secondAttribute="leading" constant="16" id="9AY-Fh-Mzi"/>
                             <constraint firstItem="SEr-Qm-02b" firstAttribute="top" secondItem="69h-Kp-AXb" secondAttribute="bottom" constant="8" id="Cqz-F1-yCg"/>
                             <constraint firstItem="Hni-NM-yFg" firstAttribute="leading" secondItem="3LC-O6-aI9" secondAttribute="leading" constant="16" id="GCb-iu-zdR"/>
                             <constraint firstAttribute="trailing" secondItem="VaK-Jk-hIs" secondAttribute="trailing" constant="8" id="Gkt-wv-PSX"/>
@@ -471,7 +456,6 @@
                             <constraint firstItem="VaK-Jk-hIs" firstAttribute="leading" secondItem="3LC-O6-aI9" secondAttribute="leading" constant="8" id="OBf-Bh-CCV"/>
                             <constraint firstAttribute="trailing" secondItem="SEr-Qm-02b" secondAttribute="trailing" constant="16" id="P39-lm-0vA"/>
                             <constraint firstAttribute="trailing" secondItem="Hni-NM-yFg" secondAttribute="trailing" constant="16" id="TkJ-i6-In1"/>
-                            <constraint firstItem="kQz-Vr-UwA" firstAttribute="top" secondItem="69h-Kp-AXb" secondAttribute="bottom" constant="8" id="Ugy-dN-5db"/>
                             <constraint firstAttribute="trailing" secondItem="pSH-Wb-5CF" secondAttribute="trailing" constant="16" id="cB3-n8-kdf"/>
                             <constraint firstAttribute="trailing" secondItem="CB4-JT-pmr" secondAttribute="trailing" constant="16" id="hNC-M9-nH8"/>
                             <constraint firstItem="h5S-SH-WNq" firstAttribute="top" secondItem="Ol0-q6-HwK" secondAttribute="bottom" constant="14" id="hcc-9s-ozM"/>

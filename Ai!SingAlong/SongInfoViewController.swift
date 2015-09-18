@@ -12,8 +12,8 @@ import Bolts
 
 class SongInfoViewController: UIViewController {
 
-    var objectId: String?
-    var setId: String!
+    var setData: PFObject!
+    
     var isAdding: Bool = true
     
     @IBOutlet weak var songNameField: UITextField!
@@ -25,6 +25,8 @@ class SongInfoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print("Here's my Set Data for this VC: \(setData)")
         
         NSNotificationCenter.defaultCenter().addObserverForName(UIKeyboardWillChangeFrameNotification, object: nil, queue: NSOperationQueue.mainQueue()) { (notification) -> Void in
             
@@ -66,95 +68,27 @@ class SongInfoViewController: UIViewController {
     
     @IBAction func donePressed(sender: AnyObject) {
         
-        let query = PFQuery(className: setId)
+        setData["artistName"] = artistField.text
+        setData["songName"] = songNameField.text
+        setData["albumName"] = albumField.text
+        setData["albumYear"] = Int(yearField.text!)
         
-        
-        if isAdding == false { //Editing an existing song
+        setData.saveInBackgroundWithBlock { (succeeded, error) -> Void in
             
-            query.getObjectInBackgroundWithId(objectId!, block: { (songInfo: PFObject?, error: NSError?) -> Void in
+            if error == nil {
                 
-                if error != nil {
-                    
-                    print("Whoopsy daisy, you've got error, fool.")
-                    
-                } else if let songInfo = songInfo {
-                    
-                    let songName = self.songNameField.text!
-                    let blockName = "\(songName)block"
-                    
-                    songInfo["artistName"] = self.artistField.text
-                    songInfo["songName"] = songName
-                    songInfo["albumName"] = self.albumField.text
-                    songInfo["albumYear"] = Int((self.yearField.text!))
-                    songInfo["blocks"] = blockName
-                    
-                    
-                    let blockInfo = PFObject(className: blockName)
-                    
-                    blockInfo["blockTitle"] = "Block Title"
-                    blockInfo["blockContents"] = "Block lyrics go here."
-                    
-                    blockInfo.saveInBackground()
-                    
-                    songInfo.saveInBackgroundWithBlock({ (succeeded, error) -> Void in
-                        
-                        if error == nil {
-                            
-                            let blockVC = self.storyboard?.instantiateViewControllerWithIdentifier("blockVC") as! BlockViewController
-                            
-                            blockVC.songId = blockName
-                            
-                            self.navigationController?.pushViewController(blockVC, animated: true)
-                            
-                            
-                        } else {
-                            
-                            print("Error: \(error)")
-                            
-                        }
-                        
-                    })
-                    
-                }
+                let blockVC = self.storyboard?.instantiateViewControllerWithIdentifier("blockVC") as! BlockViewController
                 
                 
                 
-            })
-            
-        } else { //Adding a new song to the set
-            
-            let songInfo = PFObject(className: setId)
-            
-            let songName = self.songNameField.text
-            let blockName = "\(songName)block"
-            
-            songInfo["artistName"] = self.artistField.text
-            songInfo["songName"] = songName
-            songInfo["albumName"] = self.albumField.text
-            songInfo["albumYear"] = Int((self.yearField.text)!)
-            songInfo["blocks"] = blockName
-            
-            let blockInfo = PFObject(className: blockName)
-            
-            blockInfo.saveInBackground()
-            
-            songInfo.saveInBackgroundWithBlock({ (succeeded, error) -> Void in
+                self.navigationController?.pushViewController(blockVC, animated: true)
                 
-                if error == nil {
-                    
-                    let blockVC = self.storyboard?.instantiateViewControllerWithIdentifier("blockVC") as! BlockViewController
-                    
-                    blockVC.songId = blockName
-                    
-                    self.navigationController?.pushViewController(blockVC, animated: true)
-                    
-                } else {
-                    
-                    print("Error: \(error)")
-                    
-                }
                 
-            })
+            } else {
+                
+                print("Error: \(error)")
+                
+            }
             
         }
         

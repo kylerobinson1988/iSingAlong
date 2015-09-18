@@ -14,11 +14,11 @@ class SetOptionViewController: UIViewController {
 
     @IBOutlet weak var setlistName: UILabel!
     
-    var identifier: String!
     var password: String?
     var name: String!
+    var set: PFObject!
     
-    //setlistName
+    var identifier: String!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +40,7 @@ class SetOptionViewController: UIViewController {
         let setlistMenuVC = newEditSet.instantiateViewControllerWithIdentifier("setlistMenuVC") as! SetlistMenuViewController
         
         setlistMenuVC.setToLoad = identifier
+        setlistMenuVC.setData = set
     
         self.navigationController?.pushViewController(setlistMenuVC, animated: true)
         

@@ -10,6 +10,12 @@ import UIKit
 import Parse
 import Bolts
 
+protocol MakeNewSetDelegate {
+    
+    func didFinishMakingSet(set: PFObject)
+    
+}
+
 class NewSetViewController: UIViewController {
 
     @IBOutlet weak var setlistName: UITextField!
@@ -17,6 +23,8 @@ class NewSetViewController: UIViewController {
     @IBOutlet weak var confirmPassword: UITextField!
     
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
+    
+    var delegate: MakeNewSetDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -66,6 +74,7 @@ class NewSetViewController: UIViewController {
                 let name = setlistName.text!
                 let password = passwordField.text
                 
+                // Updating the Parse setlist collection with the new setlist.
                 let setlistUpdate: PFObject = PFObject(className: "setlist")
                 setlistUpdate["name"] = name
                 setlistUpdate["date"] = createDate()
@@ -80,13 +89,25 @@ class NewSetViewController: UIViewController {
                     
                 }
                 
-                let newClass: PFObject = PFObject(className: name)
-                newClass["songName"] = "Song name"
-                newClass["artistName"] = "Artist name"
-                newClass["albumName"] = "Album name"
-                newClass["albumYear"] = 2015
+                setlistUpdate["songInfo"] = [
                 
-                setlistUpdate["objectId"] = newClass.objectId
+                    [
+                        "songName":"Song Name",
+                        "artistName":"Artist Name",
+                        "albumName":"Album Name",
+                        "albumYear":2015,
+                        "blocks": [
+                        
+                            [
+                                "title": "Block name",
+                                "contents":"Block lyrics go here."
+                            ]
+                        
+                        ],
+                    
+                    ]
+
+                ]
                 
                 callAlert("Save", message: "Save new setlist?", canCancel: true, completion: { () -> Void in
                     
@@ -96,19 +117,9 @@ class NewSetViewController: UIViewController {
                             
                             print("Setlist class updated.")
                             
-                            newClass.saveInBackgroundWithBlock({ (succeeded, error) -> Void in
-                                
-                                if succeeded {
-                                    
-                                    self.dismissViewControllerAnimated(true, completion: nil)
-                                    
-                                } else {
-                                    
-                                    print("Something just went haywire.")
-                                    
-                                }
-                                
-                            })
+                            self.delegate?.didFinishMakingSet(setlistUpdate)
+                            
+                            self.navigationController?.popViewControllerAnimated(true)
                             
                         } else {
                             

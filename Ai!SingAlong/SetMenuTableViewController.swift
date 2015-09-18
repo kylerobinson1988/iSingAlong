@@ -10,9 +10,9 @@ import UIKit
 import Parse
 import Bolts
 
-class SetMenuTableViewController: UITableViewController {
+class SetMenuTableViewController: UITableViewController, MakeNewSetDelegate {
 
-    var setlists = []
+    var setlists: [PFObject] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,19 +44,31 @@ class SetMenuTableViewController: UITableViewController {
             
             print("Setlist Info: \(setlistInfo)")
             
-            self.setlists = setlistInfo!
+            self.setlists = setlistInfo as! [PFObject]
             
             self.tableView.reloadData()
         }
         
     }
 
+    func didFinishMakingSet(set: PFObject) {
+        
+        setlists.append(set)
+        
+        tableView.reloadData()
+        
+        print(setlists)
+        
+    }
+    
     @IBAction func addButtonPressed(sender: AnyObject) {
         
         let newSetVC = storyboard?.instantiateViewControllerWithIdentifier("newSetVC") as! NewSetViewController
         
-        presentViewController(newSetVC, animated: true, completion: nil)
+        newSetVC.delegate = self
         
+        self.navigationController?.pushViewController(newSetVC, animated: true)
+                
     }
     
     
@@ -77,11 +89,10 @@ class SetMenuTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("setCell", forIndexPath: indexPath) as! SetCell
         
-        let identifier = setlists[indexPath.row].objectId
+//        let identifier = setlists[indexPath.row].objectId
         
         cell.setName.text = setlists[indexPath.row]["name"] as? String
         cell.setDate.text = setlists[indexPath.row]["date"] as? String
-        cell.identifier = identifier
 
         // Configure the cell...
 
@@ -92,8 +103,9 @@ class SetMenuTableViewController: UITableViewController {
         
         let setOptionVC = storyboard?.instantiateViewControllerWithIdentifier("setOptionVC") as! SetOptionViewController
         
-        setOptionVC.identifier = setlists[indexPath.row].objectId
         setOptionVC.name = setlists[indexPath.row]["name"] as? String
+        setOptionVC.identifier = setlists[indexPath.row].objectId
+        setOptionVC.set = setlists[indexPath.row]
         
         if let password = setlists[indexPath.row]["password"] as? String {
             

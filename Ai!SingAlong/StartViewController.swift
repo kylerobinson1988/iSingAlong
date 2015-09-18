@@ -20,17 +20,6 @@ class StartViewController: UIViewController {
         self.navigationController?.setToolbarHidden(true, animated: false)
         
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-
-        
-    
-    
-    
-    
-    
-    }
     
     override func viewDidAppear(animated: Bool) {
         

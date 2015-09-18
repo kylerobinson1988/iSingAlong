@@ -13,7 +13,7 @@ import Bolts
 class SetlistMenuViewController: UITableViewController {
 
     var setToLoad: String!
-    var setData = []
+    var setData: PFObject!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,31 +28,9 @@ class SetlistMenuViewController: UITableViewController {
     
     override func viewDidAppear(animated: Bool) {
         
-        loadInfo()
+        print("Set Data: \(setData)")
         
         self.navigationController?.setToolbarHidden(false, animated: false)
-        
-    }
-
-    func loadInfo() {
-        
-        print("Name of set to load: \(setToLoad)")
-        
-        let setQuery: PFQuery = PFQuery(className: setToLoad)
-        
-        setQuery.findObjectsInBackgroundWithBlock { (setlistInfo, error) -> Void in
-            
-            self.setData = setlistInfo!
-            
-            self.tableView.reloadData()
-            
-            print("Set Data: \(self.setData)")
-            
-            print("Set Data Count: \(self.setData.count)")
-            
-        }
-        
-        
         
     }
     
@@ -62,8 +40,7 @@ class SetlistMenuViewController: UITableViewController {
         
         let infoVC = (editSongNavVC.viewControllers[0] as! SongInfoViewController)
         
-        infoVC.setId = setToLoad
-//        infoVC.objectId = 
+        infoVC.setData = setData
         
         presentViewController(editSongNavVC, animated: true, completion: nil)
         
@@ -83,22 +60,25 @@ class SetlistMenuViewController: UITableViewController {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
         
-        return setData.count
+        return setData["songInfo"]!.count
+        
     }
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("setlistMenuCell", forIndexPath: indexPath) as! SetlistMenuCell
 
-        if let albumName = setData[indexPath.row]["albumName"] as? String {
+        let songInfo = setData["songInfo"] as! [[String:AnyObject]]
+        
+        if let albumName = songInfo[indexPath.row]["albumName"] as? String {
             
-            let year = setData[indexPath.row]["albumYear"] as? Int
+            let year = songInfo[indexPath.row]["albumYear"] as? Int
             
             let fullLabel = "\(albumName), \(year!)"
             
-            cell.songName.text = setData[indexPath.row]["songName"] as? String
+            cell.songName.text = songInfo[indexPath.row]["songName"] as? String
             cell.albumName.text = fullLabel
-            cell.artistName.text = setData[indexPath.row]["artistName"] as? String
+            cell.artistName.text = songInfo[indexPath.row]["artistName"] as? String
             
         }
         
@@ -110,8 +90,7 @@ class SetlistMenuViewController: UITableViewController {
         
         let songInfoVC = storyboard?.instantiateViewControllerWithIdentifier("songInfoVC") as! SongInfoViewController
         
-        songInfoVC.objectId = setData[indexPath.row].objectId
-        songInfoVC.setId = setToLoad
+        songInfoVC.setData = setData
         
         self.navigationController?.pushViewController(songInfoVC, animated: true)
         
@@ -130,13 +109,13 @@ class SetlistMenuViewController: UITableViewController {
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == .Delete {
             
-            let query = PFQuery(className: setToLoad)
-            
-            let objectToDelete = setData[indexPath.row].objectId!
-            
-            let deletion = query.getObjectWithId(objectToDelete!)
-            
-            deletion?.deleteInBackground()
+//            let query = PFQuery(className: setToLoad)
+//            
+//            let objectToDelete = setData[indexPath.row].objectId!
+//            
+//            let deletion = query.getObjectWithId(objectToDelete!)
+//            
+//            deletion?.deleteInBackground()
             
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
         } else if editingStyle == .Insert {
